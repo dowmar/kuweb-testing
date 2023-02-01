@@ -14,13 +14,13 @@ const Userlist2 = () => {
     }, []);
 
     const getUsers = async () => {
-        const response = await axios.get(`${process.env.PORT}users`);
+        const response = await axios.get(`/users`);
         setUser(response.data);
     };
 
     const deleteUser = async (id) => {
         try {
-            await axios.delete(`${process.env.PORT}users/${id}`);
+            await axios.delete(`/users/${id}`);
             getUsers();
         } catch (error) {
             console.log(error);

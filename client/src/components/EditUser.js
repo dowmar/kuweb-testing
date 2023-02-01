@@ -14,7 +14,7 @@ const EditUser = () => {
     }, []);
 
     const getUserById = async () => {
-        const response = await axios.get(`${process.env.PORT}users/${id}`);
+        const response = await axios.get(`/users/${id}`);
         setName(response.data.name);
         setEmail(response.data.email);
         setGender(response.data.gender);
@@ -23,7 +23,7 @@ const EditUser = () => {
     const updateUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.patch(`${process.env.PORT}users/${id}`, {
+            await axios.patch(`/users/${id}`, {
                 name,
                 email,
                 gender,
