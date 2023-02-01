@@ -73,7 +73,7 @@ function Register() {
               <input {...formik.getFieldProps('password')} className={styles.textbox} type="text" placeholder='Password*' />
               <button className={styles.btn} type='submit'>Register</button>
             </div>
-         
+
 
             <div className="text-center py-4">
               <span className='text-gray-500'>Already Register? <Link className='text-red-500' to="/">Login Now</Link></span>
