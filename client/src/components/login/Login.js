@@ -1,46 +1,36 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import avatar from '../../assets/profile.png';
 import { Toaster, toast, useToaster } from 'react-hot-toast';
+import { useAuthStore } from '../../store/store'
 import { auth, signInWithGoogle } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+
 import styles from './Login.module.css';
 
 function Login() {
 
     const navigate = useNavigate();
+    const setUsername = useAuthStore(state => state.setUsername);
     const [user, loading, error] = useAuthState(auth);
-    const toast = useToaster();
-
-
-
-
     const onLogin = async (e) => {
         e.preventDefault();
         await signInWithGoogle();
         if (loading) {
-            toast({
-                title: "Loading...",
-                description: "Login using Google Account",
-                status: "loading",
-                isClosable: false,
-                duration: 3000,
-            });
-
-
             return;
         }
         if (user) {
-            setTimeout(() => {
-                toast({
-                    title: "Action completed!",
-                    status: "success",
-                    duration: 3000,
-                });
-            }, 3000);
             navigate("/");
         }
     }
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+        if (user) {
+            navigate("/");
+        }
+    }, [user, loading]);
 
     return (
         <div className="container mx-auto">
