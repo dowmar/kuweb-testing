@@ -1,52 +1,46 @@
-import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import avatar from '../../assets/profile.png';
-import { Toaster, toast } from 'react-hot-toast';
-import { useFormik } from 'formik';
-import { usernameValidate } from '../../helper/validate'
-import { useAuthStore } from '../../store/store'
-import { auth, signInWithEmailAndPassword, signInWithGoogle, signInWithPopup } from "../../firebase";
+import { Toaster, toast, useToaster } from 'react-hot-toast';
+import { auth, signInWithGoogle } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-
 import styles from './Login.module.css';
-import { async } from '@firebase/util';
 
 function Login() {
 
     const navigate = useNavigate();
-    const setUsername = useAuthStore(state => state.setUsername);
     const [user, loading, error] = useAuthState(auth);
-    const formik = useFormik({
-        initialValues: {
-            username: 'example123'
-        },
-        validate: usernameValidate,
-        validateOnBlur: false,
-        validateOnChange: false,
-        onSubmit: async values => {
-            setUsername(values.username);
-            navigate('/password')
-        }
-    });
+    const toast = useToaster();
+
+
+
+
     const onLogin = async (e) => {
         e.preventDefault();
         await signInWithGoogle();
         if (loading) {
-            toast.loading("Login Google Account")
+            toast({
+                title: "Loading...",
+                description: "Login using Google Account",
+                status: "loading",
+                isClosable: false,
+                duration: 3000,
+            });
+
+
             return;
         }
         if (user) {
-            toast.success('Success Notification !');
+            setTimeout(() => {
+                toast({
+                    title: "Action completed!",
+                    status: "success",
+                    duration: 3000,
+                });
+            }, 3000);
             navigate("/");
         }
     }
-    useEffect(() => {
-        if (loading) {
-            toast.loading("Login Google Account")
-            return;
-        }
-        if (user) navigate("/");
-    }, [user, loading]);
 
     return (
         <div className="container mx-auto">
@@ -70,14 +64,10 @@ function Login() {
 
 
                         <div className="textbox flex flex-col items-center gap-6">
-                            {/* <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username' /> */}
-                            {/* <button className={styles.btn} type='submit'>Sign In</button> */}
+
                             <button className={styles.btn} onClick={onLogin}>Sign In with Google</button>
                         </div>
-                        {/* 
-                        <div className="text-center py-4">
-                            <span className='text-gray-500'>Not a Member <Link className={styles.stn} to="/register">Register Now</Link></span>
-                        </div> */}
+
 
                     </form>
 

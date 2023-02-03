@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from 'react';
-import { Navbar,AddUser, EditUser, Login, Register, Reset, Recovery, PageNotFound, Password, Profile } from './components';
+import { Navbar, AddUser, EditUser, Login, Register, Reset, Recovery, PageNotFound, Password, Profile } from './components';
 import { Footer, Blog, Possibility, Features, Whatkudara, Header, UserList2, Team, Sidebar } from './containers';
 import './App.css';
 
@@ -22,8 +22,7 @@ function App() {
 
                         <Whatkudara />
                         <Features />
-                        <Possibility />
-                        <Blog />
+
 
                         <Footer />
                     </div>

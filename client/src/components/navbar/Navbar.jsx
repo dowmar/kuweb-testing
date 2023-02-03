@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css';
-import { auth, logout, signInWithGoogle } from "../../firebase";
-import logo from "../../assets/logo.png";
+import { auth, logout } from "../../firebase";
 import { toast } from 'react-hot-toast';
 
 const Menu = () => (
@@ -22,8 +21,6 @@ const Menu = () => (
 const logoutAcc = () => {
   toast.error('Telah logout');
   logout();
-  // console.log(auth.currentUser.displayName)
-  // console.log(auth.currentUser.uid.length)
 }
 
 
@@ -46,6 +43,7 @@ const Navbar = () => {
     <div className='kudara__navbar'>
       <div className='kudara__navbar-links'>
         <div className="kudara__navbar-links_logo">
+          
           <h1 className='gradient__text'>Kudara</h1>
         </div>
         <div className="kudara__navbar-links_container">
@@ -61,8 +59,7 @@ const Navbar = () => {
             {error ? <p>{error}</p> : null}</>
         )}
 
-        {/* <button type='button' onClick={logout}>Log Out</button>
-        <button type='button' onClick={CheckGSign}>Cek Out</button> */}
+    
 
 
 

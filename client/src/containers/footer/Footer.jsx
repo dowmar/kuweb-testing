@@ -8,12 +8,11 @@ const Footer = () => (
     </div>
 
     <div className="kudara__footer-btn">
-      <p>Request Early Access</p>
+      <p>Download App</p>
     </div>
 
     <div className="kudara__footer-links">
       <div className="kudara__footer-links_logo">
-        <img src="" alt="kudara_logo" />
         <p>Kudara, <br /> All Rights Reserved</p>
       </div>
       <div className="kudara__footer-links_div">
