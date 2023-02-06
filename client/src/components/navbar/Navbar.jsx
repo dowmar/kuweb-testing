@@ -16,8 +16,6 @@ const Menu = () => (
   </>
 )
 
-
-
 const logoutAcc = () => {
   toast.error('Telah logout');
   logout();
@@ -58,11 +56,6 @@ const Navbar = () => {
             <Link to="/login"><button>Login dengan Google</button></Link>
             {error ? <p>{error}</p> : null}</>
         )}
-
-    
-
-
-
       </div>
 
       <div className="kudara__navbar-menu">

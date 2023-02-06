@@ -6,7 +6,6 @@ const userController = require("./controller/user.controller");
 const PORT = process.env.port || 5000;
 const app = express();
 app.use(express.json());
-// app.use(UserRoute);
 app.use("/users", userController);
 
 app.use(express.static(path.join(__dirname, "./client/build")));

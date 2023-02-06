@@ -19,16 +19,12 @@ function App() {
                             <Header />
                         </div>
                         <UserList2 />
-
                         <Whatkudara />
                         <Features />
-
-
                         <Footer />
                     </div>
                 }
                 />
-
                 <Route path="add" element={<AddUser />} />
                 <Route path="edit/:id" element={<EditUser />} />
                 <Route path="login" element={<Login />} />
