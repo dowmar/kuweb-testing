@@ -16,7 +16,7 @@ const kwsSchema = mongoose.Schema({
     displayCO2: {
         type: String,
         required: true
-    },
+    }, 
     showStatusCO: {
         type: String,
         required: true

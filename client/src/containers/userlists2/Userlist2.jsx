@@ -43,7 +43,7 @@ const Userlist2 = () => {
     };
 
     return (
-        <div className="kudara__table columns mt-5">
+        <div id="#data" className="kudara__table columns mt-5">
             <div className="kudata__table-tablelist">
                 <div className="kudara__table-heading">
                     <h1 className="gradient__text">Data List</h1>
@@ -105,8 +105,6 @@ const Userlist2 = () => {
                                 <Thead>
                                     <Tr>
                                         <Th>No</Th>
-                                        <Th>Nama</Th>
-                                        <Th>Email</Th>
                                         <Th>Nilai CO</Th>
                                         <Th>Nilai CO2</Th>
                                         <Th>Negara</Th>
@@ -118,8 +116,6 @@ const Userlist2 = () => {
                                     {users.map((user, index) => (
                                         <Tr key={user._id}>
                                             <Td>{index + 1}</Td>
-                                            <Td>{user.userName}</Td>
-                                            <Td>{user.userEmail}</Td>
                                             <Td>{user.displayCO} , {user.showStatusCO}</Td>
                                             <Td>{user.displayCO2} , {user.showStatusCO2}</Td>
                                             <Td>{user.country}</Td>
@@ -137,8 +133,6 @@ const Userlist2 = () => {
                             <Thead>
                                 <Tr>
                                     <Th>No</Th>
-                                    <Th>Nama</Th>
-                                    <Th>Email</Th>
                                     <Th>Nilai CO</Th>
                                     <Th>Nilai CO2</Th>
                                     <Th>Negara</Th>
@@ -150,8 +144,6 @@ const Userlist2 = () => {
                                 {users.map((user, index) => (
                                     <Tr key={user._id}>
                                         <Td>{index + 1}</Td>
-                                        <Td>{user.userName}</Td>
-                                        <Td>{user.userEmail}</Td>
                                         <Td>{user.displayCO} , {user.showStatusCO}</Td>
                                         <Td>{user.displayCO2} , {user.showStatusCO2}</Td>
                                         <Td>{user.country}</Td>

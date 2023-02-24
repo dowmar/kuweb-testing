@@ -41,7 +41,7 @@ const Navbar = () => {
     <div className='kudara__navbar'>
       <div className='kudara__navbar-links'>
         <div className="kudara__navbar-links_logo">
-          
+
           <h1 className='gradient__text'>Kudara</h1>
         </div>
         <div className="kudara__navbar-links_container">
@@ -64,7 +64,7 @@ const Navbar = () => {
           : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMenu(true)} />
         }
         {toggleMenu && (
-          <div className='kudara__navbar-menu_container scale-up-center'>
+          <div id="#home" className='kudara__navbar-menu_container scale-up-center'>
             <div className='kudara__navbar-menu-container-links'>
               <Menu />
               <div className='kudara__navbar-menu_container-links-sign'>
