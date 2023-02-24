@@ -18,7 +18,9 @@ function App() {
                             <Navbar />
                             <Header />
                         </div>
-                        <UserList2 />
+                        <section id="list-section">
+                            <UserList2 />
+                        </section>
                         <Whatkudara />
                         <Features />
                         <Footer />

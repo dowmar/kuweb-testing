@@ -43,7 +43,7 @@ const Userlist2 = () => {
     };
 
     return (
-        <div id="#data" className="kudara__table columns mt-5">
+        <div id="data-section" className="kudara__table columns mt-5">
             <div className="kudata__table-tablelist">
                 <div className="kudara__table-heading">
                     <h1 className="gradient__text">Data List</h1>

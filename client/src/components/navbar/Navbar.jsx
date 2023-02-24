@@ -4,15 +4,16 @@ import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css';
 import { auth, logout } from "../../firebase";
 import { toast } from 'react-hot-toast';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Menu = () => (
-  <>
-    <p><a href="#home"></a></p>
-    <p><a href="#wkudara"></a>What is Kudara</p>
-    <p><a href="#data"></a>Data list</p>
-    <p><a href="#posibility"></a>Posibilitas</p>
-    <p><a href="#future"></a>Future Improvements</p>
 
+  <>
+    <p><Link to="#wkudara"></Link>What is Kudara</p>
+    <Link to="" onClick={scrollToData}><p>Data list</p></Link>
+
+    <Link to="" onClick={scrollToPoss}><p>Possibility</p></Link>
+    <Link to="" onClick={scrollToFuture}><p>Future Improvements</p></Link>
   </>
 )
 
@@ -20,7 +21,18 @@ const logoutAcc = () => {
   toast.error('Telah logout');
   logout();
 }
-
+const scrollToData = () => {
+  const section = document.getElementById('data-section');
+  section.scrollIntoView({ behavior: 'smooth' });
+};
+const scrollToPoss = () => {
+  const section = document.getElementById('poss-section');
+  section.scrollIntoView({ behavior: 'smooth' });
+};
+const scrollToFuture = () => {
+  const section = document.getElementById('fut-section');
+  section.scrollIntoView({ behavior: 'smooth' });
+};
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
