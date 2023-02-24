@@ -2,13 +2,13 @@ import React from 'react';
 import './footer.css';
 
 const Footer = () => (
-  <div className="kudara__footer section__padding">
+  <div id='fut-section' className="kudara__footer section__padding">
     <div className="kudara__footer-heading">
       <h1 className="gradient__text">Do you want to step in to the future before others</h1>
     </div>
-
     <div className="kudara__footer-btn">
-      <p>Download App</p>
+      <a href="https://drive.google.com/file/d/1n1px3illhA1q_4ka2ujrquLIJoRGrD1v/view?usp=sharing"><p>Download App</p></a>
+
     </div>
 
     <div className="kudara__footer-links">

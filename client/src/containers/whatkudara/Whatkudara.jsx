@@ -4,7 +4,7 @@ import { Feature } from '../../components';
 
 const Whatkudara = () => {
   return (
-    <div className='kudara__whatkudara section__margin' id='wkudara'>
+    <div className='kudara__whatkudara section__margin' id='poss-section'>
       <div className='kudara__whatkudara-feature'>
         <Feature title="Explore dengan Kudara" text="Kudara is an air-quality detector app."/>
       </div>

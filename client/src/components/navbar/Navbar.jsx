@@ -7,12 +7,11 @@ import { toast } from 'react-hot-toast';
 
 const Menu = () => (
   <>
-    <p><a href="#home"></a></p>
-    <p><a href="#wkudara"></a>What is Kudara</p>
-    <p><a href="#data"></a>Data list</p>
-    <p><a href="#posibility"></a>Posibilitas</p>
-    <p><a href="#future"></a>Future Improvements</p>
+    <p><Link to="#wkudara"></Link>What is Kudara</p>
+    <Link to="" onClick={scrollToData}><p>Data list</p></Link>
 
+    <Link to="" onClick={scrollToPoss}><p>Possibility</p></Link>
+    <Link to="" onClick={scrollToFuture}><p>Future Improvements</p></Link>
   </>
 )
 
@@ -21,6 +20,18 @@ const logoutAcc = () => {
   logout();
 }
 
+const scrollToData = () => {
+  const section = document.getElementById('data-section');
+  section.scrollIntoView({ behavior: 'smooth' });
+};
+const scrollToPoss = () => {
+  const section = document.getElementById('poss-section');
+  section.scrollIntoView({ behavior: 'smooth' });
+};
+const scrollToFuture = () => {
+  const section = document.getElementById('fut-section');
+  section.scrollIntoView({ behavior: 'smooth' });
+};
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -37,11 +48,12 @@ const Navbar = () => {
     });
   }, []);
 
+
   return (
     <div className='kudara__navbar'>
       <div className='kudara__navbar-links'>
         <div className="kudara__navbar-links_logo">
-          
+
           <h1 className='gradient__text'>Kudara</h1>
         </div>
         <div className="kudara__navbar-links_container">
